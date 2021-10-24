@@ -105,7 +105,7 @@
      font-weight: 600;
  }
  
- .card {
+ #main .card {
      height: auto;
      box-shadow: 0 1px 3px #00000026;
      border: none;
@@ -118,7 +118,7 @@
      font-weight: 700;
  }
  
- .form-group input {
+ #main .form-group input {
      border: $border;
      border-radius: 0;
      &:focus {
@@ -126,13 +126,13 @@
      }
  }
  
- .form-group label {
+ #main .form-group label {
      margin-bottom: 8px;
      font-family: $font-family;
      font-weight: 500;
  }
  
- .form-control {
+ #main .form-control {
      background-color: $color-white;
      border: $border;
      border-radius: 0;
