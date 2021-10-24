@@ -1,0 +1,301 @@
+.search-logo img {
+    width: 100%;
+}
+
+.search-input {
+    width: 500px;
+    border: 2px solid #000;
+}
+
+.search-input input {
+    border: none;
+    width: 450px;
+    padding: 8px 0;
+    padding-left: 6px;
+}
+
+.search-input input:focus {
+    border: none;
+    outline: none;
+}
+
+.search-icon {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-right: 29px;
+    padding-left: 29px;
+    background: #000;
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+
+.search-menu>ul {
+    display: flex;
+}
+
+.search-menu>ul>li {
+    margin-left: 15px;
+    box-shadow: 0 0 29px 0 rgb(68 88 144 / 12%);
+    padding: 8px;
+    border-radius: 50px;
+}
+
+.search-menu ul li:hover {
+    cursor: pointer;
+}
+
+
+/* Header profile card section  */
+
+.dropdown-avatar {
+    position: relative;
+}
+
+.dropdown-avatar_card {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    top: calc(100% + 10px);
+    left: -180px;
+    z-index: 999;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+.dropdown-avatar_card ul .link {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px 0;
+    padding-left: 12px;
+    transition: .1s;
+    background-color: #fff;
+}
+
+.dropdown-avatar:hover .dropdown-avatar_card {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.dropdown-avatar_card ul .link:hover {
+    background-color: #e5e7eb;
+    border-left: 4px solid #000000;
+}
+
+.dropdown-avatar_card ul .link span {
+    margin-left: 6px;
+}
+
+
+/* Header Login card section  */
+
+.login-dropdown {
+    position: relative;
+}
+
+.dropdown-login {
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+    border: none;
+    top: calc(100% + 10px);
+    left: -200px;
+    z-index: 999;
+    width: 250px;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+
+
+/* .login-dropdown:hover .dropdown-login {
+    top: 100%;
+    visibility: visible;
+    opacity: 1;
+} */
+
+.login-title {
+    background-color: #e5e7eb;
+    padding: 8px 15px;
+}
+
+.login-title h4 {
+    font-size: 18px;
+}
+
+.login-form {
+    padding: 10px 15px;
+}
+
+.login-form input {
+    border: none;
+    margin: 12px 0;
+    border-bottom: .5px solid #000;
+}
+
+.login-form input:focus {
+    box-shadow: none;
+    border-bottom: .5px solid #000;
+}
+
+.login-form button {
+    margin-top: 10px;
+    width: 100%;
+    border: #000;
+    background-color: #000;
+    color: #fff;
+    padding: 6px 0;
+    text-transform: uppercase;
+}
+
+.login-form p {
+    font-size: 14px;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.login-form p a {
+    color: rgb(255, 87, 87);
+}
+
+
+/* Header navbar section css  */
+
+#header-nav {
+    background-color: #000;
+    height: 48px;
+}
+
+#header-nav .container {
+    height: 100%;
+}
+
+.nav-ctg {
+    background-color: #b91c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 100%;
+}
+
+.nav-ctg:hover {
+    cursor: pointer;
+}
+
+.nav-ctg ul li {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.nav-ctg .fa-align-justify {
+    margin-right: 12px;
+    font-size: 24px;
+}
+
+.fa-chevron-down {
+    margin-left: 12px;
+    font-size: 16px;
+}
+
+.nav-ctg ul li h6 {
+    font-size: 24px;
+    margin: 0;
+}
+
+
+/* nav menu css  */
+
+.nav-menu ul {
+    display: flex;
+    height: 100%;
+    /* background-color: #b91c1c; */
+}
+
+.nav-menu ul li {
+    margin-right: 25px;
+    padding: 12px;
+    transition: .5s ease-in;
+    position: relative;
+    border-radius: 50% 50% 0/ 80% 80% 0 0;
+}
+
+.nav-menu ul li.active {
+    background-color: #fff;
+}
+
+
+/* .nav-menu ul li:nth-child(1) {
+    background-image: linear-gradient(45deg, #ff0081, #6827b0);
+    border-radius: 50% 50% 0/ 80% 80% 0 0;
+}
+
+.nav-menu ul li:hover {
+    background-image: linear-gradient(45deg, #ff0081, #6827b0);
+    border-radius: 50% 50% 0/ 80% 80% 0 0;
+} */
+
+.nav-menu ul li a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.nav-menu ul li.active a {
+    color: #000 !important;
+}
+
+
+/* Carv design  */
+
+.nav-menu ul li b.left-curve {
+    position: absolute;
+    bottom: 0px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #fff;
+    display: none;
+}
+
+.nav-menu ul li b.left-curve::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 20px;
+    background: #000;
+}
+
+.nav-menu ul li b.right-curve {
+    position: absolute;
+    right: -20px;
+    top: 0px;
+    height: 100%;
+    width: 20px;
+    background: #fff;
+    display: none;
+}
+
+.nav-menu ul li b.right-curve::before {
+    content: "";
+    right: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    background: #000;
+}
+
+.nav-menu ul li.active b.left-curve,
+.nav-menu ul li.active b.right-curve {
+    display: block;
+}

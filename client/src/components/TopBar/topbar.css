@@ -1,0 +1,29 @@
+#topbar {
+    background-color: #f7f8fa;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#topbar ul {
+    display: flex;
+}
+
+.topbar-info ul li {
+    display: flex;
+    margin-right: 12px;
+    align-items: center;
+}
+
+.topbar-info ul li i {
+    margin-right: 4px;
+}
+
+.topbar-icons ul li {
+    margin-right: 8px;
+}
+
+.topbar-icons ul li i {
+    font-size: 18px;
+}

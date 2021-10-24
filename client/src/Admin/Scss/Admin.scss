@@ -1,0 +1,244 @@
+ /* Colors */
+ 
+ $db-bg:#f5f7fa;
+ $background:#ffffff;
+ $box-shadow: 0 1px 3px #00000026;
+ $color-white:#fff;
+ $primary:#556cd6;
+ $green-main: rgb(0, 82, 73);
+ $green-light: rgb(200, 250, 205);
+ $green-lighter: rgba(0, 171, 85, 0.08);
+ $green-dark: rgb(0, 123, 85);
+ $green-darker: rgb(0, 171, 85);
+ $blue-main: rgb(4, 41, 122);
+ $blue-dark: rgb(12, 83, 183);
+ $blue-light: rgb(208, 242, 255);
+ $yellow-main: rgb(122, 79, 1);
+ $yellow-dark: rgb(183, 129, 3);
+ $yellow-light: rgb(255, 247, 205);
+ $maroon-main: rgb(122, 12, 46);
+ $maroon-dark: rgb(183, 33, 54);
+ $maroon-light: rgb(255, 231, 217);
+ $gary-main: rgb(99, 115, 129);
+ $gary-light: rgb(223, 223, 223);
+ $gary-lighter: rgb(244, 246, 248);
+ $font-family: "Open Sans",
+ sans-serif;
+ $border: 0.0625rem solid #ced4da;
+ ::-webkit-scrollbar {
+     display: none;
+ }
+ /* Admin side bar */
+ 
+ .sidebar {
+     height: 100vh;
+     min-height: 100vh;
+     width: 280px;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     left: 0;
+     overflow-x: hidden;
+     transition: 0.5s;
+     .sidenav {
+         width: 100%;
+         height: 100%;
+         border-right: 1px solid $green-light;
+         padding-top: 15px;
+         border-radius: 0;
+         box-shadow: none;
+         &__top {
+             width: 100%;
+             height: 60px;
+             border-radius: 0;
+             box-shadow: none;
+             &--logo {
+                 width: 80%;
+                 margin: 0 auto;
+             }
+         }
+         &__nav {
+             margin-top: 50px;
+             li {
+                 padding: 15px 0;
+                 padding-left: 30px;
+                 padding-right: 5px;
+                 color: $gary-main;
+                 i {
+                     margin-right: 15px;
+                     font-size: 10px;
+                 }
+                 a {
+                     font-size: 14px;
+                     font-weight: 600;
+                     color: $gary-main;
+                 }
+             }
+             .nav__collapse li {
+                 padding-left: 50px;
+             }
+             .sidenav_nav-active {
+                 border-right: 3px solid $green-darker;
+                 background-color: $green-lighter;
+                 color: $green-darker;
+                 a {
+                     color: $green-darker;
+                 }
+             }
+         }
+     }
+ }
+ /* Admin Dashbord Main part css */
+ /* Common styles */
+ 
+ .db__background {
+     padding: 40px 0;
+     background-color: $db-bg;
+ }
+ 
+ .db__btn {
+     padding: 8px 26px;
+     border: none;
+     display: inline;
+     font-family: $font-family;
+     font-size: 18px;
+     font-weight: 600;
+ }
+ 
+ .card {
+     height: auto;
+     box-shadow: 0 1px 3px #00000026;
+     border: none;
+     padding: 15px 18px;
+     border-radius: 0;
+ }
+ 
+ .card-title {
+     font-family: $font-family;
+     font-weight: 700;
+ }
+ 
+ .form-group input {
+     border: $border;
+     border-radius: 0;
+     &:focus {
+         border: $border;
+     }
+ }
+ 
+ .form-group label {
+     margin-bottom: 8px;
+     font-family: $font-family;
+     font-weight: 500;
+ }
+ 
+ .form-control {
+     background-color: $color-white;
+     border: $border;
+     border-radius: 0;
+     &:focus {
+         box-shadow: none;
+         border: $border;
+     }
+ }
+ 
+ .card .radio {
+     color: $green-darker;
+     &.Mui-checked {
+         color: $green-darker;
+     }
+ }
+ 
+ .slug {
+     border: $border;
+     background-color: $db-bg;
+     span {
+         padding: 0 5px;
+     }
+     .form-control {
+         border: none;
+         border-left: $border;
+         &:focus {
+             border: none;
+             border-left: $border;
+         }
+     }
+ }
+ 
+ #main {
+     transition: margin-left .5s;
+     margin-left: 280px;
+ }
+ /* Dashbord container css */
+ 
+ .admin__dashbord {
+     background-color: $db-bg;
+     padding: 40px;
+ }
+ 
+ .admin__dashbord__header {
+     margin: 10px 0;
+ }
+ 
+ .db_card {
+     border-radius: 0;
+     border: none;
+     .card__text {
+         padding: 30px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+         a {
+             background-color: #556cd6;
+             padding: 8px 15px;
+             font-size: 26px;
+             border-radius: 50px;
+             color: $color-white;
+             margin-bottom: 10px;
+         }
+     }
+ }
+ /* Product section */
+ /* create product css */
+ 
+ .product {
+     padding: 40px 0;
+     background-color: $db-bg;
+     &__header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 20px 0;
+         .product__header--title {
+             font-family: $font-family;
+             font-weight: 700;
+         }
+         .product__header--btn {
+             background-color: $green-darker;
+             color: $color-white;
+         }
+     }
+     &__form {
+         .product__basicInfo--title {
+             font-family: $font-family;
+             font-weight: 700;
+         }
+         .product__price {
+             .product__price--title {
+                 font-family: $font-family;
+                 font-weight: 700;
+                 margin-bottom: 20px;
+             }
+             .discount_check {
+                 color: $green-darker;
+             }
+         }
+     }
+ }
+ /* Category list section */
+ 
+ .ctgList-section {
+     background-color: $db-bg;
+     padding: 40px;
+ }

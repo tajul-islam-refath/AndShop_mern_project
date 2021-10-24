@@ -1,0 +1,363 @@
+// global value
+$font-family:'Open Sans',
+sans-serif;
+$bg-white-light:#f7f8fa;
+$bg-card:rgba(255, 255, 255, 1);
+$color-orang:#f79837;
+$color-black:#000;
+$color-white:#fff;
+$btn-bg-black:#000;
+$btn-bg-white:#fff;
+$btn-color-text-black:#000;
+$btn-color-text-white:#fff;
+$box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+/* Global */
+
+.form-group {
+    input {
+        border: 1px solid $color-black;
+        &:focus {
+            border: 1px solid $color-black;
+            box-shadow: none;
+        }
+    }
+    select {
+        border: 1px solid $color-black;
+        &:focus {
+            border: 1px solid $color-black;
+            box-shadow: none;
+        }
+    }
+}
+
+// root my button
+.myBtn {
+    border: none;
+    padding: 12px 22px;
+}
+
+.myBtn__type--one {
+    font-family: $font-family;
+    font-weight: 600;
+    background-color: $btn-bg-black;
+    color: $btn-color-text-white;
+    border: 1px solid #000;
+    transition: .5s;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+// banner section scss style
+
+/*Home  banner section scss style*/
+
+.banner {
+    background-image: url("../assets/banner.jpg");
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    &__left__text &__left__text--one {
+        font-family: $font-family;
+        font-size: 150px;
+        text-transform: uppercase;
+        font-weight: 300;
+        line-height: 150px;
+        span {
+            display: block;
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+    &__left__text &__left__text--two {
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #f3f3f3;
+        margin-left: 10px;
+    }
+    &__left__text &__left__text--btn {
+        font-family: $font-family;
+        font-weight: 600;
+        background-color: $btn-bg-black;
+        color: $btn-color-text-white;
+        border: 1px solid #000;
+        margin-top: 15px;
+        margin-left: 10px;
+        transition: .5s;
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+    &__right &__right__hero {
+        position: relative;
+        &--Img {
+            position: absolute;
+            top: -120px;
+            right: 0;
+            width: 90%;
+        }
+    }
+}
+
+// product variation style scss
+.product_variation {
+    padding-top: 100px;
+    .product_variation__box {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+        img {
+            width: 100%;
+            transition: transform 1s;
+        }
+        &:hover img {
+            transform: scale(1.1);
+        }
+    }
+    .product_variation__box__text--one {
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        padding: 20px;
+        .text-one {
+            color: $color-orang;
+        }
+        h2 {
+            font-family: $font-family;
+            padding: 5px 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        h4 {
+            font-size: $font-family;
+            font-weight: 600;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        button {
+            padding: 6px 16px;
+        }
+    }
+    .product_variation__box__text--two {
+        position: absolute;
+        bottom: 25px;
+        left: 40px;
+        padding: 20px;
+        .text-one {
+            color: $color-orang;
+        }
+        h2 {
+            font-family: $font-family;
+            padding: 5px 0;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        h4 {
+            font-size: $font-family;
+            font-weight: 600;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        button {
+            padding: 6px 16px;
+        }
+    }
+}
+
+
+/* User dashbord style */
+
+.userDashbord {
+    background-color: $bg-white-light;
+    padding: 100px 0;
+    .userDashbord_sidenav-card {
+        border: none;
+        max-width: 320px;
+        min-height: 780px;
+        box-shadow: $box-shadow;
+        background-color: $bg-card;
+        padding: 0;
+        padding-top: 30px;
+    }
+    .profilepic img {
+        width: 128px;
+        height: 128px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+    .profile-info h5 i {
+        color: #21a98c;
+        margin-left: 4px;
+    }
+}
+
+
+/* sidenav style */
+
+#sidenavbar {
+    width: 100%;
+    background-color: $bg-card;
+    margin: 0;
+    padding: 0;
+    padding-top: 40px;
+    ul {
+        padding: 0;
+        li {
+            width: 100%;
+            margin: 12px 0;
+            padding: 8px 0;
+            padding-left: 12px;
+            transition: .2s;
+            &:hover {
+                border-left: 4px solid $color-black;
+                background-color: #e5e7eb;
+                cursor: pointer;
+            }
+            a>i {
+                margin-right: 10px;
+            }
+        }
+        .sidenav__active {
+            border-left: 4px solid $color-black;
+            background-color: #e5e7eb;
+        }
+    }
+}
+
+
+/* Dashbord containers style */
+
+.userDashbord_container {
+    width: 800px;
+    min-width: 624px;
+    margin-left: 15px;
+    .dashbord-card {
+        border: none;
+        box-shadow: $box-shadow;
+        background-color: $bg-card;
+    }
+}
+
+.user-dashboard {
+    padding: 10px 20px;
+    .d-card {
+        padding: 40px 20px;
+        background: #fff;
+        box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+        border: none;
+    }
+    .total-balance ul {
+        padding: 0;
+        li {
+            display: flex;
+        }
+        i {
+            margin-right: 8px;
+        }
+    }
+}
+
+
+/* User account container style */
+
+.account {
+    padding: 15px 10px 10px 20px;
+    .account__top--title {
+        font-family: $font-family;
+        font-size: 14px;
+    }
+    .account__body--icon {
+        background-color: $color-black;
+        padding: 12px 10px;
+        color: $color-white;
+        font-size: 16px;
+        border-radius: 50px;
+    }
+    .account__info--text {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+    }
+    .account__info--btn {
+        padding: 6px 15px;
+    }
+    .account__info__details {
+        margin-top: 40px;
+        .account__info__details--text {
+            font-family: $font-family;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+    }
+    /* User info edit section style */
+    .account__info__edit {
+        .form-group {
+            margin: 8px 0;
+        }
+    }
+}
+
+
+/*  Sign up page style */
+
+.signup {
+    padding: 100px 0;
+    background-color: $bg-white-light;
+    .signup__form {
+        width: 60%;
+        margin: 0 auto;
+        box-shadow: $box-shadow;
+        background-color: $bg-card;
+        padding: 20px;
+        .form-group {
+            margin: 22px 0;
+            font-family: $font-family;
+            font-weight: 300;
+            input {
+                border: 1px solid #f3f3f3;
+                padding: 8px;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    .signup__form__birthday__inpute {
+        display: flex;
+        border: 1px solid #f3f3f3;
+        margin-top: 40px;
+        padding: 4px 2px;
+        .form-group {
+            margin: 0 2px;
+            width: 130px;
+            select {
+                border: none;
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    .form-group {
+        margin: 0 2px;
+        select {
+            border: 1px solid #f3f3f3;
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+    .signup__form--btn {
+        width: 100%;
+    }
+}

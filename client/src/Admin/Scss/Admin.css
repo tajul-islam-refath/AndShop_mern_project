@@ -1,0 +1,258 @@
+/* Colors */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Admin side bar */
+.sidebar {
+  height: 100vh;
+  min-height: 100vh;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sidebar .sidenav {
+  width: 100%;
+  height: 100%;
+  border-right: 1px solid #c8facd;
+  padding-top: 15px;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.sidebar .sidenav__top {
+  width: 100%;
+  height: 60px;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.sidebar .sidenav__top--logo {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sidebar .sidenav__nav {
+  margin-top: 50px;
+}
+
+.sidebar .sidenav__nav li {
+  padding: 15px 0;
+  padding-left: 30px;
+  padding-right: 5px;
+  color: #637381;
+}
+
+.sidebar .sidenav__nav li i {
+  margin-right: 15px;
+  font-size: 10px;
+}
+
+.sidebar .sidenav__nav li a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #637381;
+}
+
+.sidebar .sidenav__nav .nav__collapse li {
+  padding-left: 50px;
+}
+
+.sidebar .sidenav__nav .sidenav_nav-active {
+  border-right: 3px solid #00ab55;
+  background-color: rgba(0, 171, 85, 0.08);
+  color: #00ab55;
+}
+
+.sidebar .sidenav__nav .sidenav_nav-active a {
+  color: #00ab55;
+}
+
+/* Admin Dashbord Main part css */
+/* Common styles */
+.db__background {
+  padding: 40px 0;
+  background-color: #f5f7fa;
+}
+
+.db__btn {
+  padding: 8px 26px;
+  border: none;
+  display: inline;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card {
+  height: auto;
+  -webkit-box-shadow: 0 1px 3px #00000026;
+          box-shadow: 0 1px 3px #00000026;
+  border: none;
+  padding: 15px 18px;
+  border-radius: 0;
+}
+
+.card-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.form-group input {
+  border: 0.0625rem solid #ced4da;
+  border-radius: 0;
+}
+
+.form-group input:focus {
+  border: 0.0625rem solid #ced4da;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+}
+
+.form-control {
+  background-color: #fff;
+  border: 0.0625rem solid #ced4da;
+  border-radius: 0;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0.0625rem solid #ced4da;
+}
+
+.card .radio {
+  color: #00ab55;
+}
+
+.card .radio.Mui-checked {
+  color: #00ab55;
+}
+
+.slug {
+  border: 0.0625rem solid #ced4da;
+  background-color: #f5f7fa;
+}
+
+.slug span {
+  padding: 0 5px;
+}
+
+.slug .form-control {
+  border: none;
+  border-left: 0.0625rem solid #ced4da;
+}
+
+.slug .form-control:focus {
+  border: none;
+  border-left: 0.0625rem solid #ced4da;
+}
+
+#main {
+  -webkit-transition: margin-left .5s;
+  transition: margin-left .5s;
+  margin-left: 280px;
+}
+
+/* Dashbord container css */
+.admin__dashbord {
+  background-color: #f5f7fa;
+  padding: 40px;
+}
+
+.admin__dashbord__header {
+  margin: 10px 0;
+}
+
+.db_card {
+  border-radius: 0;
+  border: none;
+}
+
+.db_card .card__text {
+  padding: 30px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.db_card .card__text a {
+  background-color: #556cd6;
+  padding: 8px 15px;
+  font-size: 26px;
+  border-radius: 50px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Product section */
+/* create product css */
+.product {
+  padding: 40px 0;
+  background-color: #f5f7fa;
+}
+
+.product__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px 0;
+}
+
+.product__header .product__header--title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.product__header .product__header--btn {
+  background-color: #00ab55;
+  color: #fff;
+}
+
+.product__form .product__basicInfo--title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+}
+
+.product__form .product__price .product__price--title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.product__form .product__price .discount_check {
+  color: #00ab55;
+}
+
+/* Category list section */
+.ctgList-section {
+  background-color: #f5f7fa;
+  padding: 40px;
+}
+/*# sourceMappingURL=Admin.css.map */

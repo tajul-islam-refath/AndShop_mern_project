@@ -1,0 +1,409 @@
+/* Global */
+.form-group input {
+  border: 1px solid #000;
+}
+
+.form-group input:focus {
+  border: 1px solid #000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.form-group select {
+  border: 1px solid #000;
+}
+
+.form-group select:focus {
+  border: 1px solid #000;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.myBtn {
+  border: none;
+  padding: 12px 22px;
+}
+
+.myBtn__type--one {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.myBtn__type--one:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/*Home  banner section scss style*/
+.banner {
+  background-image: url("../assets/banner.jpg");
+  padding: 150px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner__left__text .banner__left__text--one {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150px;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 150px;
+}
+
+.banner__left__text .banner__left__text--one span {
+  display: block;
+  color: #fff;
+  font-weight: 700;
+}
+
+.banner__left__text .banner__left__text--two {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #f3f3f3;
+  margin-left: 10px;
+}
+
+.banner__left__text .banner__left__text--btn {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  margin-top: 15px;
+  margin-left: 10px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.banner__left__text .banner__left__text--btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.banner__right .banner__right__hero {
+  position: relative;
+}
+
+.banner__right .banner__right__hero--Img {
+  position: absolute;
+  top: -120px;
+  right: 0;
+  width: 90%;
+}
+
+.product_variation {
+  padding-top: 100px;
+}
+
+.product_variation .product_variation__box {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.product_variation .product_variation__box img {
+  width: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.product_variation .product_variation__box:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.product_variation .product_variation__box__text--one {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+  padding: 20px;
+}
+
+.product_variation .product_variation__box__text--one .text-one {
+  color: #f79837;
+}
+
+.product_variation .product_variation__box__text--one h2 {
+  font-family: "Open Sans", sans-serif;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.product_variation .product_variation__box__text--one h4 {
+  font-size: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.product_variation .product_variation__box__text--one button {
+  padding: 6px 16px;
+}
+
+.product_variation .product_variation__box__text--two {
+  position: absolute;
+  bottom: 25px;
+  left: 40px;
+  padding: 20px;
+}
+
+.product_variation .product_variation__box__text--two .text-one {
+  color: #f79837;
+}
+
+.product_variation .product_variation__box__text--two h2 {
+  font-family: "Open Sans", sans-serif;
+  padding: 5px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.product_variation .product_variation__box__text--two h4 {
+  font-size: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.product_variation .product_variation__box__text--two button {
+  padding: 6px 16px;
+}
+
+/* User dashbord style */
+.userDashbord {
+  background-color: #f7f8fa;
+  padding: 100px 0;
+}
+
+.userDashbord .userDashbord_sidenav-card {
+  border: none;
+  max-width: 320px;
+  min-height: 780px;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: white;
+  padding: 0;
+  padding-top: 30px;
+}
+
+.userDashbord .profilepic img {
+  width: 128px;
+  height: 128px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.userDashbord .profile-info h5 i {
+  color: #21a98c;
+  margin-left: 4px;
+}
+
+/* sidenav style */
+#sidenavbar {
+  width: 100%;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  padding-top: 40px;
+}
+
+#sidenavbar ul {
+  padding: 0;
+}
+
+#sidenavbar ul li {
+  width: 100%;
+  margin: 12px 0;
+  padding: 8px 0;
+  padding-left: 12px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#sidenavbar ul li:hover {
+  border-left: 4px solid #000;
+  background-color: #e5e7eb;
+  cursor: pointer;
+}
+
+#sidenavbar ul li a > i {
+  margin-right: 10px;
+}
+
+#sidenavbar ul .sidenav__active {
+  border-left: 4px solid #000;
+  background-color: #e5e7eb;
+}
+
+/* Dashbord containers style */
+.userDashbord_container {
+  width: 800px;
+  min-width: 624px;
+  margin-left: 15px;
+}
+
+.userDashbord_container .dashbord-card {
+  border: none;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: white;
+}
+
+.user-dashboard {
+  padding: 10px 20px;
+}
+
+.user-dashboard .d-card {
+  padding: 40px 20px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+          box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  border: none;
+}
+
+.user-dashboard .total-balance ul {
+  padding: 0;
+}
+
+.user-dashboard .total-balance ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.user-dashboard .total-balance ul i {
+  margin-right: 8px;
+}
+
+/* User account container style */
+.account {
+  padding: 15px 10px 10px 20px;
+  /* User info edit section style */
+}
+
+.account .account__top--title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+.account .account__body--icon {
+  background-color: #000;
+  padding: 12px 10px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 50px;
+}
+
+.account .account__info--text {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.account .account__info--btn {
+  padding: 6px 15px;
+}
+
+.account .account__info__details {
+  margin-top: 40px;
+}
+
+.account .account__info__details .account__info__details--text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.account .account__info__edit .form-group {
+  margin: 8px 0;
+}
+
+/*  Sign up page style */
+.signup {
+  padding: 100px 0;
+  background-color: #f7f8fa;
+}
+
+.signup .signup__form {
+  width: 60%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  background-color: white;
+  padding: 20px;
+}
+
+.signup .signup__form .form-group {
+  margin: 22px 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.signup .signup__form .form-group input {
+  border: 1px solid #f3f3f3;
+  padding: 8px;
+}
+
+.signup .signup__form .form-group input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signup .signup__form__birthday__inpute {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid #f3f3f3;
+  margin-top: 40px;
+  padding: 4px 2px;
+}
+
+.signup .signup__form__birthday__inpute .form-group {
+  margin: 0 2px;
+  width: 130px;
+}
+
+.signup .signup__form__birthday__inpute .form-group select {
+  border: none;
+}
+
+.signup .signup__form__birthday__inpute .form-group select:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signup .form-group {
+  margin: 0 2px;
+}
+
+.signup .form-group select {
+  border: 1px solid #f3f3f3;
+}
+
+.signup .form-group select:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.signup .signup__form--btn {
+  width: 100%;
+}
+/*# sourceMappingURL=main.css.map */
