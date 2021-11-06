@@ -3,6 +3,20 @@ const { validationResult } = require("express-validator")
 const errorFormater = require("../utils/formetErrorMsg")
 
 
+exports.getCategory = async(req, res, next) => {
+    try {
+
+        const categorys = await Category.find()
+            // console.log(categorys)
+        return res.status(200).json({
+            categorys
+        })
+
+    } catch (err) {
+        next(err)
+    }
+}
+
 exports.createCategory = async(req, res, next) => {
     try {
 

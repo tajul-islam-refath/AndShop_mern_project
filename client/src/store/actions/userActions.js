@@ -198,7 +198,8 @@ export const logout = () => async(dispatch) => {
         })
 
         // usert token remove
-        window.localStorage.removeItem("token")
+        window.localStorage.removeItem("token");
+        window.localStorage.clear();
     } catch (error) {
         dispatch({
             type: LOGOUT_FAIL,

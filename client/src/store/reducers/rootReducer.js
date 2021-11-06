@@ -29,7 +29,10 @@ import {
 import { cartReducer } from '../reducers/chartReducer'
 
 // admin state
-import { category } from "../reducers/adminReducer"
+import {
+    categoryList,
+    category
+} from "../reducers/adminReducer"
 
 const rootReducer = combineReducers({
     // users Reducers
@@ -59,7 +62,8 @@ const rootReducer = combineReducers({
     cart: cartReducer,
 
     // admin reducers
-    adminCategory: category
+    adminCategory: category,
+    adminCategoryList: categoryList
 })
 
 export default rootReducer;
