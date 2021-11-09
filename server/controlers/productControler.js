@@ -5,40 +5,82 @@ const cloudinary = require('cloudinary').v2;
 const APIFeatures = require('../utils/apiFeatures')
 
 
-// create new product => "/api/admin/products/create"
-exports.createProduct = catchAsyncError(async(req, res, next) => {
+// create new product => 
+exports.createProduct = async(req, res, next) => {
+    try {
 
-    let images = []
-    if (typeof req.body.images === 'string') {
-        images.push(req.body.images)
-    } else {
-        images = req.body.images
-    }
+        let images = []
+        if (typeof req.body.images === 'string') {
+            images.push(req.body.images)
+        } else {
+            images = req.body.images
+        }
 
-    let imagesLinks = [];
-    for (let i = 0; i < images.length; i++) {
-        const result = await cloudinary.uploader.upload(images[i], {
-            folder: 'products'
-        });
+        let imagesLinks = [];
+        for (let i = 0; i < images.length; i++) {
+            const result = await cloudinary.uploader.upload(images[i], {
+                folder: 'AndShop Products'
+            });
 
-        imagesLinks.push({
-            public_id: result.public_id,
-            url: result.secure_url
+            imagesLinks.push({
+                public_id: result.public_id,
+                url: result.secure_url
+            })
+        }
+
+        // req.body.images = imagesLinks
+        // req.body.user = req.user._id;
+
+        let ratings = 0;
+        let numOfReviews = 0;
+        let reviews = [];
+        let userId = req.user._id;
+        const {
+            name,
+            slug,
+            description,
+            shortDescription,
+            price,
+            oldPrice,
+            discount,
+            sku,
+            stock,
+            visibility,
+            categoryId
+        } = req.body
+
+        const product = {
+            name,
+            slug,
+            description,
+            shortDescription,
+            price,
+            oldPrice,
+            discount,
+            sku,
+            stock,
+            visibility,
+            categoryId,
+            ratings,
+            numOfReviews,
+            reviews,
+            userId,
+            images: imagesLinks
+        }
+
+
+        const createdProduct = await Product.create(product);
+
+        // console.log(createdProduct)
+
+        res.status(200).json({
+            success: true,
+            message: 'Product Create Successfully',
         })
+    } catch (error) {
+        next(error)
     }
-
-    req.body.images = imagesLinks
-    req.body.user = req.user.id;
-
-
-    const product = await Product.create(req.body);
-
-    res.status(200).json({
-        success: true,
-        message: 'Product Create Successfully',
-        product
-    })
-})
+}
 
 // // get all products => "/api/products?keyword=value"
 // exports.getProducts = catchAsyncError(async(req, res, next) => {

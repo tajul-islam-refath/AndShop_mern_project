@@ -20,10 +20,9 @@ exports.registerUser = catchAsyncErrors(async(req, res, next) => {
         })
     }
 
-    // const defaultAvatar = "https://res.cloudinary.com/rifat/image/upload/v1632969133/AndShopAvatar/q2bxof7g9hgquj053lcx.png";
     // upload default user avatar on cloudinary
-    // const result = await cloudinary.uploader.upload(defaultAvatar, {
-    //     folder: 'avatars',
+    // const result = await cloudinary.uploader.upload(req.body.avatar, {
+    //     folder: 'AndShop User Avatar',
     //     width: 150,
     //     crop: "scale"
     // })

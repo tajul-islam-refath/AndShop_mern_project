@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;700;800;900&display=swap");
 /* Colors */
 ::-webkit-scrollbar {
   display: none;
@@ -57,6 +58,7 @@
 }
 
 .sidebar .sidenav__nav li a {
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-size: 14px;
   font-weight: 600;
   color: #637381;
@@ -81,13 +83,14 @@
 .db__background {
   padding: 40px 0;
   background-color: #f5f7fa;
+  font-family: "Fira Sans", sans-serif, sans-serif;
 }
 
 .db__btn {
   padding: 8px 26px;
   border: none;
   display: inline;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-size: 18px;
   font-weight: 600;
 }
@@ -102,7 +105,7 @@
 }
 
 .card-title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-weight: 700;
 }
 
@@ -117,7 +120,7 @@
 
 #main .form-group label {
   margin-bottom: 8px;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-weight: 500;
 }
 
@@ -226,7 +229,7 @@
 }
 
 .product__header .product__header--title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-weight: 700;
 }
 
@@ -236,12 +239,12 @@
 }
 
 .product__form .product__basicInfo--title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-weight: 700;
 }
 
 .product__form .product__price .product__price--title {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Fira Sans", sans-serif, sans-serif;
   font-weight: 700;
   margin-bottom: 20px;
 }

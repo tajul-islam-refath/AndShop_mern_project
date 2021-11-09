@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import Button from '@mui/material/Button';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 import { getAllCategory, categoryErrorsClear } from "../../../store/actions/adminAction"
 
 function createData(name, items, visibility, actions) {
@@ -11,10 +13,6 @@ function createData(name, items, visibility, actions) {
         actions
     };
 }
-
-const rows = [
-    // createData('Cupcake', 305, "true", "Edit"),
-];
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -77,11 +75,6 @@ const Categorylist = () => {
         dispatch(getAllCategory())
     }, [])
 
-    useEffect(() => {
-        categorys.forEach(c => {
-            rows.push(createData(c.name, 0, c.visibility, "edit"))
-        })
-    }, [categorys])
 
     return (
         <section className="categoryList db__background">
@@ -103,7 +96,7 @@ const Categorylist = () => {
                 </div>
                 <div className="categoryList__body">
                     <div className="card card-body">
-                        <CategoryTableList />
+                        <CategoryTableList categorys={categorys} />
                     </div>
                 </div>
             </div>
@@ -112,7 +105,7 @@ const Categorylist = () => {
 }
 
 
-const CategoryTableList = () => {
+const CategoryTableList = ({ categorys }) => {
     return (
         <table className="table">
             <thead className="thead-dark">
@@ -124,13 +117,16 @@ const CategoryTableList = () => {
             </thead>
             <tbody>
 
-                {rows.map((value, index) => (
-                    <tr>
+                {categorys.map((value, index) => (
+                    <tr key={index}>
                         <th scope="row">{index + 1}</th>
                         <td>{value.name}</td>
-                        <td>{value.items}</td>
+                        <td>{0}</td>
                         <td>{value.visibility}</td>
-                        <td>{value.actions}</td>
+                        <td>
+                            <EditIcon />
+                            <DeleteIcon />
+                        </td>
                     </tr>
                 ))}
             </tbody>

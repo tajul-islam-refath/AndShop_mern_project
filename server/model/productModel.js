@@ -7,19 +7,44 @@ const productSchema = new Schema({
         trim: true,
         maxLength: [100, 'Product name cannot extcecd 100 char']
     },
+    slug: {
+        type: String,
+        required: [true, 'please enter slug'],
+        trim: true,
+    },
+    description: {
+        type: String,
+        required: [true, 'please enter a discreption'],
+        trim: true,
+    },
+    shortDescription: {
+        type: String,
+        required: [true, 'please enter a short description'],
+        trim: true,
+    },
     price: {
         type: Number,
         required: [true, 'please enter  price'],
         maxLength: [5, 'Product price cannot extcecd 5 length'],
         default: 0.0
     },
-    description: {
+    oldPrice: {
+        type: Number,
+        default: 0.0
+    },
+    discount: {
+        type: Number,
+        default: 0
+    },
+    sku: {
         type: String,
-        required: [true, 'please enter discreption'],
+        required: [true, 'please enter product sku'],
         trim: true,
     },
-    ratings: {
+    stock: {
         type: Number,
+        required: [true, 'Please enter product stock'],
+        maxLength: [5, 'Product name cannot exceed 5 characters'],
         default: 0
     },
     images: [{
@@ -32,35 +57,18 @@ const productSchema = new Schema({
             required: true
         }
     }],
-    category: {
+    visibility: {
         type: String,
-        required: true,
-        enum: {
-            values: [
-                'Electronics',
-                'Cameras',
-                'Laptops',
-                'Accessories',
-                'Headphones',
-                'Food',
-                "Books",
-                'Clothes/Shoes',
-                'Beauty/Health',
-                'Sports',
-                'Outdoor',
-                'Home'
-            ],
-            message: 'Please select correct catagory for project'
-        }
+        required: [true, 'please select product visibility'],
+        trim: true,
     },
-    seller: {
-        type: String,
+    categoryId: {
+        type: Schema.ObjectId,
+        ref: 'Category',
         required: true
     },
-    stock: {
+    ratings: {
         type: Number,
-        required: [true, 'Please enter product stock'],
-        maxLength: [5, 'Product name cannot exceed 5 characters'],
         default: 0
     },
     numOfReviews: {
@@ -86,7 +94,7 @@ const productSchema = new Schema({
             required: true
         }
     }],
-    user: {
+    userId: {
         type: Schema.ObjectId,
         ref: 'User',
         required: true
@@ -94,7 +102,13 @@ const productSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now()
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now()
     }
+}, {
+    timestamps: true
 })
 
 const Product = model('Product', productSchema)

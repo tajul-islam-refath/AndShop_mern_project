@@ -52,6 +52,10 @@ export const createCategory = (formData) => async(dispatch) => {
     }
 }
 
+export const createNewProduct = () => async(dispatch) => {
+
+}
+
 export const categoryErrorsClear = () => dispatch => {
     dispatch({ type: CATEGORY_ERRORS_CLEAR })
 }

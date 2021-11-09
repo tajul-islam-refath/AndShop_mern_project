@@ -1,4 +1,7 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import { useAlert } from "react-alert"
+import axios from "axios"
+import { useDispatch, useSelector } from "react-redux"
 import Resizer from "react-image-file-resizer";
 
 import Checkbox from '@mui/material/Checkbox';
@@ -6,15 +9,14 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Fab from '@mui/material/Fab';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
+
+import { getAllCategory, categoryErrorsClear } from "../../../store/actions/adminAction"
 
 
 const resizeFile = (file) =>
@@ -33,19 +35,27 @@ const resizeFile = (file) =>
         );
     });
 
-const categorys = [
-    "Mans Fashiouns",
-    "Womens Fashiouns",
-    "Child Fashiouns",
-    "Electronics",
-]
+
 
 const Product = () => {
-    const [ctg, setCtg] = useState("");
+    const [name, setName] = useState("")
+    const [slug, setSlug] = useState("")
+    const [description, setDescription] = useState("")
+    const [shortDescription, setShortDescription] = useState("")
+    const [price, setPrice] = useState(0)
+    const [oldPrice, setOldPrice] = useState(0)
+    const [discount, setDiscount] = useState(0)
+    const [sku, setSku] = useState("")
+    const [stock, setStock] = useState(0)
     const [productImgs, setProductImgs] = useState([])
-    const [openDiscount, setOpenDiscount] = useState(false)
     const [visibility, setVisibility] = useState("")
+    const [ctg, setCtg] = useState("")
 
+    const [openDiscount, setOpenDiscount] = useState(false)
+
+    const dispatch = useDispatch()
+    const alert = useAlert()
+    const { categorys, loading, errors } = useSelector(state => state.adminCategoryList)
 
     const submitImg = async (event) => {
         try {
@@ -59,12 +69,38 @@ const Product = () => {
 
     const deleteImg = (img) => {
         let newArray = productImgs.filter(p => p != img)
-        console.log(newArray)
         setProductImgs([...newArray])
     }
 
+    const onSubmit = async () => {
+        const fromdata = new FormData();
+        fromdata.append("name", name);
+        fromdata.append("slug", slug);
+        fromdata.append("description", description);
+        fromdata.append("shortDescription", shortDescription);
+        fromdata.append("price", parseInt(price));
+        fromdata.append("oldPrice", parseInt(oldPrice));
+        fromdata.append("discount", parseInt(discount));
+        fromdata.append("sku", sku);
+        fromdata.append("stock", parseInt(stock));
+        fromdata.append("visibility", visibility);
+        fromdata.append("categoryId", ctg);
+        fromdata.append("images", productImgs);
 
+        try {
 
+            await axios.post("/api/products/admin/create-product", fromdata)
+            alert.success("New Product Add Success")
+        } catch (err) {
+            console.log(err.response.data.message)
+            alert.error("Something Erros")
+        }
+
+    }
+
+    useEffect(() => {
+        dispatch(getAllCategory())
+    }, [])
 
     return (
         <section className="product">
@@ -74,11 +110,16 @@ const Product = () => {
                         <h3 className="product__header--title" >New Product</h3>
                     </div>
                     <div>
-                        <button className="product__header--btn db__btn" >Save</button>
+                        <button
+                            className="product__header--btn db__btn"
+                            onClick={() => onSubmit()}
+                        >
+                            Save
+                        </button>
                     </div>
                 </div>
                 <div className="product__form">
-                    <form action="">
+                    <form>
                         <div className="row">
                             <div className="col-lg-8">
                                 <div className="card card-body">
@@ -93,7 +134,14 @@ const Product = () => {
                                                 <label htmlFor="name">
                                                     Name
                                                 </label>
-                                                <input type="text" class="form-control" id="name" placeholder="Product name" />
+                                                <input
+                                                    type="text"
+                                                    class="form-control"
+                                                    id="name"
+                                                    placeholder="Product name"
+                                                    value={name}
+                                                    onChange={(e) => setName(e.target.value)}
+                                                />
                                             </div>
                                         </div>
                                         <div className="mb-4">
@@ -101,7 +149,14 @@ const Product = () => {
                                                 <label htmlFor="slug">Slug</label>
                                                 <div className="d-flex align-items-center slug" >
                                                     <span>https://example.com/products/</span>
-                                                    <input type="text" className="form-control" id="slug" placeholder="example-product-160" />
+                                                    <input
+                                                        type="text"
+                                                        className="form-control"
+                                                        id="slug"
+                                                        placeholder="example-product-160"
+                                                        value={slug}
+                                                        onChange={(e) => setSlug(e.target.value)}
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -110,7 +165,13 @@ const Product = () => {
                                                 <label htmlFor="description">
                                                     Description
                                                 </label>
-                                                <textarea class="form-control" id="description" rows="6"></textarea>
+                                                <textarea
+                                                    className="form-control"
+                                                    id="description"
+                                                    rows="6"
+                                                    value={description}
+                                                    onChange={(e) => setDescription(e.target.value)}
+                                                ></textarea>
                                             </div>
                                         </div>
                                         <div className="mb-4">
@@ -118,7 +179,13 @@ const Product = () => {
                                                 <label htmlFor="shortdescription">
                                                     Short Description
                                                 </label>
-                                                <textarea className="form-control" id="shortdescription" rows="2"></textarea>
+                                                <textarea
+                                                    className="form-control"
+                                                    id="shortdescription"
+                                                    rows="2"
+                                                    value={shortDescription}
+                                                    onChange={(e) => setShortDescription(e.target.value)}
+                                                ></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +201,14 @@ const Product = () => {
                                                     <label htmlFor="price">
                                                         Price
                                                     </label>
-                                                    <input type="number" class="form-control" id="price" placeholder="Product Price" />
+                                                    <input
+                                                        type="number"
+                                                        className="form-control"
+                                                        id="price"
+                                                        placeholder="Product Price"
+                                                        value={price}
+                                                        onChange={(e) => setPrice(e.target.value)}
+                                                    />
                                                 </div>
                                             </div>
                                             <div className="col-lg-6">
@@ -142,7 +216,14 @@ const Product = () => {
                                                     <label htmlFor="oldprice">
                                                         Old Price
                                                     </label>
-                                                    <input type="number" class="form-control" id="oldprice" placeholder="Old Price" />
+                                                    <input
+                                                        type="number"
+                                                        className="form-control"
+                                                        id="oldprice"
+                                                        placeholder="Old Price"
+                                                        value={oldPrice}
+                                                        onChange={(e) => setOldPrice(e.target.value)}
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
@@ -162,7 +243,14 @@ const Product = () => {
                                                 <label htmlFor="oldprice">
                                                     Product Discount
                                                 </label>
-                                                <input type="number" class="form-control" id="oldprice" placeholder="discount must be in (%)" />
+                                                <input
+                                                    type="number"
+                                                    class="form-control"
+                                                    id="oldprice"
+                                                    placeholder="discount must be in (%)"
+                                                    value={discount}
+                                                    onChange={(e) => setDiscount(e.target.value)}
+                                                />
                                             </div>
                                         }
                                     </div>
@@ -177,7 +265,14 @@ const Product = () => {
                                                 <label htmlFor="sku">
                                                     SKU
                                                 </label>
-                                                <input type="text" class="form-control" id="sku" placeholder="SCREW150" />
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="sku"
+                                                    placeholder="SCREW150"
+                                                    value={sku}
+                                                    onChange={(e) => setSku(e.target.value)}
+                                                />
                                             </div>
                                         </div>
                                         <div className="my-4">
@@ -185,7 +280,14 @@ const Product = () => {
                                                 <label htmlFor="stock">
                                                     Stock
                                                 </label>
-                                                <input type="number" class="form-control" id="stock" placeholder="Product Quantity" />
+                                                <input
+                                                    type="number"
+                                                    className="form-control"
+                                                    id="stock"
+                                                    placeholder="Product Quantity"
+                                                    value={stock}
+                                                    onChange={(e) => setStock(e.target.value)}
+                                                />
                                             </div>
                                         </div>
 
@@ -287,7 +389,7 @@ const Product = () => {
                                                         <em>Category Select</em>
                                                     </MenuItem>
                                                     {categorys.map(category => (
-                                                        <MenuItem value={category}>{category}</MenuItem>
+                                                        <MenuItem key={category._id} value={category._id}>{category.name}</MenuItem>
                                                     ))}
                                                 </Select>
                                             </FormControl>
